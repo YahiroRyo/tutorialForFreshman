@@ -1,5 +1,3 @@
-// 変数とは？
-// 配列とは？
 const quizList = [
     {
         question: '日本の首都はどこですか？',
@@ -45,7 +43,6 @@ const quizList = [
 
 let currentQuizIndex = 0;
 
-// 要素を取得する権限をもらう
 const answerResultCorrectElement   = document.querySelector('.answer-result-correct');
 const answerResultIncorrectElement = document.querySelector('.answer-result-incorrect');
 const quizIndexElement             = document.querySelector('#quiz-index');
@@ -53,7 +50,6 @@ const questionElement              = document.querySelector('#question');
 const inputAnswerElement           = document.querySelector('#input-answer');
 const toAnswerButtonElement        = document.querySelector('#to-answer-button');
 
-// 関数とは
 const displayQuestion = () => {
     questionElement.textContent  = quizList[currentQuizIndex].question;
     quizIndexElement.textContent = currentQuizIndex + 1 + '問目';
@@ -68,13 +64,13 @@ const displayAnswerResult = () => {
 
     setTimeout(() => {
         currentQuizIndex++;
-        resetForm();
+        resetFormValues();
         resetDisplayAnswerResult();
         displayQuestion();
     }, 3000);
 }
 
-const resetForm = () => {
+const resetFormValues = () => {
     quizIndexElement.textContent    = '';
     questionElement.textContent     = '';
     inputAnswerElement.value        = '';
